@@ -1,0 +1,22 @@
+{
+  "name": "react-navigation-simple-utils-example",
+  "displayName": "ReactNavigationSimpleUtils Example",
+  "expo": {
+    "name": "react-navigation-simple-utils-example",
+    "slug": "react-navigation-simple-utils-example",
+    "description": "Example app for react-navigation-simple-utils",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
