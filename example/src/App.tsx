@@ -1,19 +1,28 @@
-import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import ReactNavigationSimpleUtils from 'react-navigation-simple-utils';
+import * as React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { useDoubleTapBackExit } from 'react-navigation-simple-utils'
 
-export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    ReactNavigationSimpleUtils.multiply(3, 7).then(setResult);
-  }, []);
-
+function HomeScreen() {
+  useDoubleTapBackExit()
   return (
     <View style={styles.container}>
-      <Text>Result: {result}</Text>
+      <Text>Home Screen</Text>
     </View>
-  );
+  )
+}
+
+const Stack = createStackNavigator()
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
 }
 
 const styles = StyleSheet.create({
@@ -22,4 +31,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-});
+})
+
+export default App
